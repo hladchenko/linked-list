@@ -10,8 +10,12 @@ class LinkedList:
         self.__size = 1
 
     def add(self, element):
-        self.__last.next = Node(element)
-        self.__last = self.__last.next
+        if self.__first is None:
+            self.__first = Node(element)
+            self.__last = self.__first
+        else:
+            self.__last.next = Node(element)
+            self.__last = self.__last.next
         self.__size += 1
 
     def remove(self, element):
@@ -48,3 +52,11 @@ class LinkedList:
 
     def get_last(self):
         return self.__last.element
+
+    def is_empty(self):
+        return self.__size == 0
+
+    def clear(self):
+        self.__first = None
+        self.__last = None
+        self.__size = 0
