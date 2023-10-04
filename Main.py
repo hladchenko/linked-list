@@ -6,6 +6,8 @@ linked_list.add(2)
 linked_list.add(3)
 linked_list.add(4)
 
+linked_list.remove(4)
+
 linked_list.print_list()
 
 print("\nLinked list size is: ", linked_list.get_size())

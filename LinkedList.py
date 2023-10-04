@@ -5,21 +5,35 @@ class LinkedList:
     __size = 0
 
     def __init__(self, element):
-        self.root = Node(element)
+        self.__first = Node(element)
+        self.__last = self.__first
         self.__size = 1
 
     def add(self, element):
-        self.__add(self.root, element)
+        self.__last.next = Node(element)
+        self.__last = self.__last.next
+        self.__size += 1
 
-    def __add(self, root, element):
-        if not root.next:
-            root.next = Node(element)
-            self.__size += 1
+    def remove(self, element):
+        if self.__first.element == element:
+            self.__first = self.__first.next
+            self.__size -= 1
         else:
-            self.__add(root.next, element)
+            prev = self.__first
+            current = self.__first.next
+            while current is not None:
+                if current.element == element:
+                    if current.next is not None:
+                        prev.next = current.next
+                    else:
+                        self.__last = prev
+                        prev.next = None
+                    self.__size -= 1
+                prev = current
+                current = current.next
 
     def print_list(self):
-        self.__print(self.root)
+        self.__print(self.__first)
 
     def __print(self, root):
         if root is not None:
