@@ -1,10 +1,9 @@
 from LinkedList import LinkedList
-from Node import Node
 
 linked_list = LinkedList(1)
 
-node1 = Node(1)
-node2 = Node(2)
-node3 = Node(3)
+linked_list.add(2)
+linked_list.add(3)
+linked_list.add(4)
 
-print(linked_list.root.element)
+linked_list.print_list()

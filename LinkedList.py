@@ -2,24 +2,26 @@ from Node import Node
 
 
 class LinkedList:
-    size = 0
+    __size = 0
 
     def __init__(self, element):
         self.root = Node(element)
-        self.size = 1
+        self._size = 1
 
     def add(self, element):
-        self._add(self.root, element)
+        self.__add(self.root, element)
 
-    def _add(self, root, element):
+    def __add(self, root, element):
         if not root.next:
             root.next = Node(element)
+            self._size += 1
         else:
-            self._add(root.next, element)
-        self.size += 1;
+            self.__add(root.next, element)
 
-    def print(self):
-        self._print(self.root)
+    def print_list(self):
+        self.__print(self.root)
 
-    def print(self, root):
-        print("TODO")
+    def __print(self, root):
+        if root is not None:
+            print(root.element)
+            self.__print(root.next)
