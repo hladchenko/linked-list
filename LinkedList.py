@@ -6,7 +6,7 @@ class LinkedList:
 
     def __init__(self, element):
         self.root = Node(element)
-        self._size = 1
+        self.__size = 1
 
     def add(self, element):
         self.__add(self.root, element)
@@ -14,7 +14,7 @@ class LinkedList:
     def __add(self, root, element):
         if not root.next:
             root.next = Node(element)
-            self._size += 1
+            self.__size += 1
         else:
             self.__add(root.next, element)
 
@@ -25,3 +25,6 @@ class LinkedList:
         if root is not None:
             print(root.element)
             self.__print(root.next)
+
+    def get_size(self):
+        return self.__size
