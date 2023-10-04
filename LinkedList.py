@@ -18,6 +18,20 @@ class LinkedList:
             self.__last = self.__last.next
         self.__size += 1
 
+    def add_by_index(self, index, element):
+        new_node = Node(element)
+        if index == 0:
+            self.__first, new_node.next = new_node, self.__first
+        elif index > self.__size:
+            return
+        else:
+            current, i = self.__first, 1
+            while current is not None:
+                if index == i:
+                    current.next, new_node.next = new_node, current.next
+                current, i = current.next, i + 1
+        self.__size += 1
+
     def remove(self, element):
         if self.__first.element == element:
             self.__first = self.__first.next

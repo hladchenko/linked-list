@@ -23,3 +23,10 @@ print("Size: ", linked_list.get_size())
 
 print("Contains 6: ", linked_list.contains(6))
 print("Contains 5: ", linked_list.contains(5))
+
+linked_list.clear()
+linked_list.add_by_index(0, 14)
+linked_list.add_by_index(1, 15)
+
+linked_list.print_list()
+print("Size: ", linked_list.get_size())
