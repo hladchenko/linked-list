@@ -11,3 +11,5 @@ linked_list.remove(4)
 linked_list.print_list()
 
 print("\nLinked list size is: ", linked_list.get_size())
+print("First: ", linked_list.get_first())
+print("Last: ", linked_list.get_last())

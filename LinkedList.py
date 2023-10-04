@@ -42,3 +42,9 @@ class LinkedList:
 
     def get_size(self):
         return self.__size
+
+    def get_first(self):
+        return self.__first.element
+
+    def get_last(self):
+        return self.__last.element
