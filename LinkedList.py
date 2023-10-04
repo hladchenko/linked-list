@@ -32,6 +32,16 @@ class LinkedList:
                 current, i = current.next, i + 1
         self.__size += 1
 
+    def set(self, index, element):
+        if index > self.__size - 1:
+            return
+        current, i = self.__first, 0
+        while current is not None:
+            if i == index:
+                current.element = element
+            current, i = current.next, i + 1
+
+
     def remove(self, element):
         if self.__first.element == element:
             self.__first = self.__first.next

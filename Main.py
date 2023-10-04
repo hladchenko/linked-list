@@ -28,5 +28,7 @@ linked_list.clear()
 linked_list.add_by_index(0, 14)
 linked_list.add_by_index(1, 15)
 
+linked_list.set(1, 40)
+
 linked_list.print_list()
 print("Size: ", linked_list.get_size())
