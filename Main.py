@@ -32,3 +32,7 @@ linked_list.set(1, 40)
 
 linked_list.print_list()
 print("Size: ", linked_list.get_size())
+
+new_list = LinkedList.of([1, 3, 5, 7])
+new_list.print_list()
+

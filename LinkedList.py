@@ -9,6 +9,13 @@ class LinkedList:
         self.__last = self.__first
         self.__size = 1
 
+    @staticmethod
+    def of(arr):
+        new_list = LinkedList(arr[0])
+        for i in range(1, len(arr)):
+            new_list.add(arr[i])
+        return new_list
+
     def add(self, element):
         if self.__first is None:
             self.__first = Node(element)
@@ -40,7 +47,6 @@ class LinkedList:
             if i == index:
                 current.element = element
             current, i = current.next, i + 1
-
 
     def remove(self, element):
         if self.__first.element == element:
