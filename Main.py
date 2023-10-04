@@ -20,3 +20,6 @@ print("Is empty: ", linked_list.is_empty())
 linked_list.add(6)
 linked_list.print_list()
 print("Size: ", linked_list.get_size())
+
+print("Contains 6: ", linked_list.contains(6))
+print("Contains 5: ", linked_list.contains(5))

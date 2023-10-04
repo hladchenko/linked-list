@@ -60,3 +60,11 @@ class LinkedList:
         self.__first = None
         self.__last = None
         self.__size = 0
+
+    def contains(self, element):
+        current = self.__first
+        while current is not None:
+            if current.element == element:
+                return True
+            current = current.next
+        return False
